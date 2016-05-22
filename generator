@@ -43,6 +43,15 @@ def Print_Makefile(file, project):
     file.write("NAME\t=\t")
     file.write(project)
     file.write("\n\n")
+    ask = input("utilisation de la lib lapin ? (y or n):")
+    if (ask == "y"):
+        lapin = ["-L/home/${USER}/.froot/include", "-llapin", "-lsfml-audio", "-lsfml-graphics", "-lsfml_window", "lsfml-system", "-lstdc++", "-ldl", "-lm"]
+        file.write("LAPIN\t=\t-L/home/${USER}/.froot/lib\n")
+        for car in lapin:
+            file.write("LAPIN\t+=\t")
+            file.write(car)
+            file.write("\n")
+        file.write("\n")
     file.write("CFLAGS\t+=\t\n\n")
     file.write("SRCS\t=\t\n\n")
     file.write("OBJS\t=\t$(SRCS:.c=.o)\n\n")
