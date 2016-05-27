@@ -48,7 +48,7 @@ def Print_Makefile(file, project):
     file.write("\n\n")
     ask = input("utilisation de la lib lapin ? (y or n):")
     if (ask == "y"):
-        lapin = ["-L/home/${USER}/.froot/include", "-llapin", "-lsfml-audio", "-lsfml-graphics", "-lsfml_window", "lsfml-system", "-lstdc++", "-ldl", "-lm"]
+        lapin = ["-L/home/${USER}/.froot/include", "-llapin", "-lsfml-audio", "-lsfml-graphics", "-lsfml_window", "-lsfml-system", "-lstdc++", "-ldl", "-lm"]
         file.write("LAPIN\t=\t-L/home/${USER}/.froot/lib\n")
         for car in lapin:
             file.write("LAPIN\t+=\t")
@@ -56,8 +56,13 @@ def Print_Makefile(file, project):
             file.write("\n")
         file.write("\n")
     file.write("CFLAGS\t=\t")
-    flag = input("quels flags voulez-vous ? (tapez les noms des flags)\n")
+    flag = input("quels flags d'erreurs voulez-vous ? (-W -Wall...)\n")
     file.write(flag);
+    while (input("souhaitez-vous d'autres flags ? (y or n):") == "y"):
+        n_flag = input("entrez vos flags:\n")
+        file.write("\n")
+        file.write("CFLAGS +=\t")
+        file.write(n_flag)
     file.write("\n\n")
     file.write("SRCS\t=\t\n\n")
     file.write("OBJS\t=\t$(SRCS:.c=.o)\n\n")
