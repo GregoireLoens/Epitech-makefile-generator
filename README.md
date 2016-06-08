@@ -1,2 +1,4 @@
 # Epitech-makefile-generator
 a script to generate your makefile with norm
+
+Use = ./Make_generator

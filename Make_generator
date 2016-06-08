@@ -7,7 +7,7 @@ import time
 def Usage():
     print("!WARNING!:\n")
     print("USAGE:")
-    print("\t ./make_gen ([flag] + [flag-content]) [project name]\n")
+    print("\t ./Make_generator\n")
     print("!WARNING END!")
 
 def Print_header(file, login, project):
@@ -83,6 +83,10 @@ if __name__ == "__main__":
     if first == "y":
         login = input("quel est votre login: ")
         project = input("Quel est le nom du projet: ")
+        try:
+            os.remove("make.conf")
+        except OSError:
+            pass
         config = open("make.conf", "x")
         config.write(login)
         config.write("\n")
@@ -92,7 +96,9 @@ if __name__ == "__main__":
     else:
         config = open("make.conf")
         login = config.readline()
+        login = login.strip()
         project = config.readline()
+        project = project.strip()
         config.close()
     header = input("Voulez vous un header ? (y or n): ")
     try:
