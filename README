@@ -1,0 +1,14 @@
+### EPITECH MAKEFILE GENERATOR 2.0 ##
+
+Feature: 1.Gestion des dépendances
+	 2.Gestion du makefile c et c++
+
+## TODOLIST ##
+
+1.Gestion du header
+2.Système de Template
+
+## COMPILATION && INSTALL INSTRUCTION ##
+
+--> cmake . && make
+--> sudo ln -s chemin/Epitech_makefile_generator /usr/bin/nom_du_binaire_que_vous_voulez
