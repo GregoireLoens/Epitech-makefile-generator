@@ -5,7 +5,7 @@
 ** Login   <gregoire.loens@epitech.eu>
 **
 ** Started on  Tue Feb 14 16:27:57 2017 Gregoire LOENS
-** Last update Tue Feb 14 16:27:57 2017 Gregoire LOENS
+// Last update Wed Feb 15 11:34:49 2017 loens_g
 */
 
 #include <fstream>
@@ -29,8 +29,8 @@ void	Mkf::MakefileClass::printVar(std::ofstream &file)
   file << "SRCS\t=\t\n\n";
   if (this->usrInfo.fileType == "C")
   {
-    file << "OBJS\t=\t $(SRCS:.c=.o)\n\n";
-    file << "OBJS\t=\t $(SRCS:.c=.d)\n\n\n";
+    file << "OBJS\t=\t$(SRCS:.c=.o)\n\n";
+    file << "DEPS\t=\t$(SRCS:.c=.d)\n\n\n";
   }
   else
   {
