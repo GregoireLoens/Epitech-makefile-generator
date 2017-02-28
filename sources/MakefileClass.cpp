@@ -5,7 +5,7 @@
 ** Login   <gregoire.loens@epitech.eu>
 **
 ** Started on  Tue Feb 14 16:27:57 2017 Gregoire LOENS
-// Last update Wed Feb 15 11:34:49 2017 loens_g
+// Last update Tue Feb 28 09:51:09 2017 loens_g
 */
 
 #include <fstream>
@@ -13,29 +13,29 @@
 
 void	Mkf::MakefileClass::printVar(std::ofstream &file)
 {
-  file << "INCLUDE\t=\t" << "\n\n";
-  file << "RM\t=\trm -rf" << "\n\n";
+  file << "INCLUDE\t\t=\t" << "\n\n";
+  file << "RM\t\t=\trm -rf" << "\n\n";
   file << this->usrInfo.fileType << "FLAGS\t+=\t$(INCLUDE)\n\n"
        << this->usrInfo.fileType << "FLAGS\t+=\t -MD -MP" <<"\n\n";
-  file << "LDFLAGS\t+=\t" << "\n\n";
-  file << "CC\t=\t";
+  file << "LDFLAGS\t\t+=\t" << "\n\n";
+  file << "CC\t\t=\t";
   file << this->usrInfo.comp << "\n\n";
-  file << "DEBUG\t?=\t0" << "\n\n";
+  file << "DEBUG\t\t?=\t0" << "\n\n";
   file << "ifeq\t($(DEBUG), 1)\n\tCC\t=\t";
   file << this->usrInfo.comp << "\n\t";
   file << this->usrInfo.fileType << "FLAGS\t+=\t-g -ggdb3\nendif\n\n";
-  file << "NAME\t=\t";
+  file << "NAME\t\t=\t";
   file << this->usrInfo.project << "\n\n";
-  file << "SRCS\t=\t\n\n";
+  file << "SRCS\t\t=\t\n\n";
   if (this->usrInfo.fileType == "C")
   {
-    file << "OBJS\t=\t$(SRCS:.c=.o)\n\n";
-    file << "DEPS\t=\t$(SRCS:.c=.d)\n\n\n";
+    file << "OBJS\t\t=\t$(SRCS:.c=.o)\n\n";
+    file << "DEPS\t\t=\t$(SRCS:.c=.d)\n\n\n";
   }
   else
   {
-    file << "OBJS\t=\t $(SRCS:.cpp=.o)\n\n";
-    file << "OBJS\t=\t $(SRCS:.cpp=.d)\n\n\n";
+    file << "OBJS\t\t=\t $(SRCS:.cpp=.o)\n\n";
+    file << "OBJS\t\t=\t $(SRCS:.cpp=.d)\n\n\n";
   }
 }
 
