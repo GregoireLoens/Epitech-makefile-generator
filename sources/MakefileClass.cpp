@@ -5,7 +5,7 @@
 ** Login   <gregoire.loens@epitech.eu>
 **
 ** Started on  Tue Feb 14 16:27:57 2017 Gregoire LOENS
-// Last update Tue Feb 28 09:51:09 2017 loens_g
+// Last update Mon Apr 10 12:34:44 2017 loens_g
 */
 
 #include <fstream>
@@ -35,7 +35,7 @@ void	Mkf::MakefileClass::printVar(std::ofstream &file)
   else
   {
     file << "OBJS\t\t=\t $(SRCS:.cpp=.o)\n\n";
-    file << "OBJS\t\t=\t $(SRCS:.cpp=.d)\n\n\n";
+    file << "DEPS\t\t=\t $(SRCS:.cpp=.d)\n\n\n";
   }
 }
 
